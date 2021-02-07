@@ -6,6 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { useAppContext } from "../libs/contextLib";
 import { onError } from "../libs/errorLib";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [notes, setNotes] = useState([]);
@@ -66,10 +67,18 @@ export default function Home() {
       <div className="lander">
         <h1>Scratch</h1>
         <p className="text-muted">A simple note taking app</p>
+        <div className="pt-3">
+          <Link to="/login" className="btn btn-info btn-lg mr-3">
+            Login
+          </Link>
+          <Link to="/signup" className="btn btn-success btn-lg">
+            Signup
+          </Link>
+        </div>
       </div>
     );
   }
-
+  
   function renderNotes() {
     return (
       <div className="notes">
